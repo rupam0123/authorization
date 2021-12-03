@@ -11,7 +11,9 @@ export default function LoggedIn(){
       <Link to ='/locations'>
       <Button variant="success">Locations</Button>
       </Link>
+      <Link to ='/families'>
       <Button variant="success">Families</Button>
+      </Link>
       <Button variant="success">Transactions</Button>
       </>
     )

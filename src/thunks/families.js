@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {getProductItem} from '../actions';
+import {getFamiliesItem} from '../actions';
 
 const client = axios.create({
   baseURL: 'http://localhost:8000',
@@ -10,10 +10,11 @@ const client = axios.create({
  ))
 
 
-export const requestProducts = () => async (dispatch) => {
+export const requestFamilies = () => async (dispatch) => {
   try {
-    const response = await client.get('/products');
-    dispatch(getProductItem(response.data));
+    const response = await client.get('/families');
+    console.log('i am family',response.data)
+    dispatch(getFamiliesItem(response.data));
   } catch (err) {
     console.log(err);
   }

@@ -6,6 +6,7 @@ import LogIn from './Users/LogIn';
 import LoggedIn from './Users/LoggedIn';
 import Products from './container/Products';
 import Locations from './container/Locations';
+import Families from './container/Families'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/loggedin'component={LoggedIn}/>
         <Route path='/product'component={Products}/>
         <Route path='/locations'component={Locations}/>
+        <Route path='/families'component={Families}/>
       </Router>
     </div>
   );

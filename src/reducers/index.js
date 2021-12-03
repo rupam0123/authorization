@@ -4,6 +4,7 @@ import { accessToken } from './accessToken';
 import { LogIn } from './logIn';
 import { getProduct } from './product';
 import { getLocation } from './location';
+import { getFamily } from './families';
 
 
 export default combineReducers({
@@ -12,4 +13,5 @@ export default combineReducers({
 		LogIn,
 		getProduct,
 		getLocation,
+		getFamily
 });
