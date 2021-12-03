@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import { requestLocation } from '../thunks/locations';
+import { requestLocation } from '../thunks/listItems'
 
 export default function Locations (){
     const location = useSelector((state)=>state.getLocation.location)

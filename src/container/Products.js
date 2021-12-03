@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import { requestProducts } from '../thunks/product';
+import { requestProducts } from '../thunks/listItems';
 
 export default function Products (){
     const products = useSelector((state)=>state.getProduct.products)

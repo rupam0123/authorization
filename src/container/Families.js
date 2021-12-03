@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import { requestFamilies } from '../thunks/families';
+import { requestFamilies } from '../thunks/listItems'
 
 
 export default function Products (){

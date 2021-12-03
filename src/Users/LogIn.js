@@ -15,6 +15,11 @@ export default function LogIn() {
       }
       const handlesubmit = (e) => {
         e.preventDefault();
+        if(!user.email.trim() &&!user.password.trim()){
+          return(
+            alert('email or password empty')
+          )
+        }
         dispatch(requestlogIn(user,history));
     }
     

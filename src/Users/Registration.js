@@ -17,7 +17,11 @@ export default function Registration() {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    if (!user.email && !user.password) return;
+    if (!user.email.trim() && !user.password.trim()){
+      return(
+        alert('email or password empty')
+      )
+    };
     dispatch(requestNewUsers(user));
     history.push('/login')
   }
