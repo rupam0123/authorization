@@ -23,16 +23,11 @@ export default function LogIn() {
         <h1>LogIn</h1>
         <Form onSubmit={handlesubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control name="email" type="email" placeholder="Enter email" onChange={handleChange} />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <input className="col-sm-4 mx-3" name="email" type="email" placeholder="Enter email" onChange={handleChange} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword" onChange={handleChange}>
-          <Form.Label>Password</Form.Label>
-          <Form.Control name="password" type="password" placeholder="Password" />
+          <input className="col-sm-4 mx-3" name="password" type="password" placeholder="Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />

@@ -10,7 +10,6 @@ export default function Registration() {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.registration.data)
   const history =useHistory();
-  console.log('i am user', user)
 
   const handleChange=(event)=>{
     dispatch(setEmailPass({...user,[event.target.name] : event.target.value}))
@@ -18,9 +17,12 @@ export default function Registration() {
 
   const handlesubmit = (e) => {
     e.preventDefault();
+    if (!user.email && !user.password) return;
     dispatch(requestNewUsers(user));
     history.push('/login')
-
+  }
+  const handleLogin =() =>{
+    history.push('/login')
   }
 
 
@@ -29,22 +31,20 @@ export default function Registration() {
       <h1>Registration Form</h1>
       <Form onSubmit={handlesubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control name="email" type="email" placeholder="Enter email" onChange={handleChange} />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <input className="col-sm-4" name="email" type="email" placeholder="Enter email" onChange={handleChange} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword" onChange={handleChange}>
-          <Form.Label>Password</Form.Label>
-          <Form.Control name="password" type="password" placeholder="Password" />
+          <input className="col-sm-4" name="password" type="password" placeholder="Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Register
+        </Button>{' '}
+        <Button variant="secondary" onClick={handleLogin}>
+          Login
         </Button>
       </Form>
     </>

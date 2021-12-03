@@ -1,7 +1,7 @@
 import { SET_ACCESS_TOKEN } from "../actions";
 
 const getTokenFromLocalStorage = () => {
-    const tokenJsonString = localStorage.getItem('tokenReducer') || '[]'; ;
+    const tokenJsonString = localStorage.getItem('tokenReducer') || '[]'; 
     return JSON.parse(tokenJsonString);
   };
 
