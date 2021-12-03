@@ -7,7 +7,7 @@ export default function LoggedIn(){
   const history = useHistory();
 
   const handleLogout=()=>{
-    localStorage.removeItem("tokenReducer");
+    localStorage.removeItem("token");
     history.push('/login');
 
   }

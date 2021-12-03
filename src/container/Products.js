@@ -4,7 +4,6 @@ import { requestProducts } from '../thunks/listItems';
 
 export default function Products (){
     const products = useSelector((state)=>state.getProduct.products)
-    console.log(products)
     const dispatch=useDispatch();
 
     useEffect(() => {
@@ -14,6 +13,9 @@ export default function Products (){
      return(
          <>
          <h1>Products</h1>
+         <select>
+             <option>page</option>
+         </select>
          {products.map((item)=>
          <li>
              {item.id}:{item.name}:{item.cost}

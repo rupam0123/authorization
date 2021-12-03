@@ -1,22 +1,24 @@
 import { SET_ACCESS_TOKEN } from "../actions";
 
 const getTokenFromLocalStorage = () => {
-    const tokenJsonString = localStorage.getItem('tokenReducer') || '[]'; 
-    return JSON.parse(tokenJsonString);
+    const tokenJsonString = localStorage.getItem('token'); 
+    return tokenJsonString;
   };
 
 const initialState ={
     token:getTokenFromLocalStorage(),
 }
-const setTokenOnLocalStorage = (token = []) => {
-    const tokenJsonString = JSON.stringify(token);
-    localStorage.setItem('tokenReducer', tokenJsonString);
+const setTokenOnLocalStorage = (token) => {
+    
+    console.log('i am set token',token)
+    localStorage.setItem('token', token);
   }
 
 export const accessToken=(state=initialState,action)=>{
     switch(action.type){
         case SET_ACCESS_TOKEN:
-            const token =[...state.token,action.payload]
+            const token =action.payload
+            console.log('i am state',token);
             setTokenOnLocalStorage(token);
             return{
                 ...state,
