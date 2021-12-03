@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react'
+import { Table } from 'react-bootstrap'
 import {useDispatch,useSelector} from 'react-redux'
 import { requestLocation } from '../thunks/listItems'
 
@@ -13,13 +14,28 @@ export default function Locations (){
     }, [])
      return(
          <>
-         <h1>location</h1>
+         <h1>Locations</h1>
+         <Table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
          {location.map((item)=>
-         <li>
-             {item.id}:{item.name}:{item.cost}
-         </li>
+         <tr>
+             <td>{item.id}</td>
+             <td>{item.name}</td>
+             <td>{item.cost}</td>
+        </tr>   
+    
             )}
+            </tbody>
+          </Table>
          </>
+         
          
      )
 }

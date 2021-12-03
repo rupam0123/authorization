@@ -1,17 +1,20 @@
-import axios from 'axios';
+import client from '../axios'
 import {getFamiliesItem, getLocationItem, getProductItem} from '../actions';
 
-const client = axios.create({
-  baseURL: 'http://localhost:8000',
-});
+
 const token = localStorage.getItem('token')
+console.log('i am get',token)
    client.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
 
-export const requestProducts = () => async (dispatch) => {
+export const requestProducts = (productFilter) => async (dispatch) => {
   try {
-    const response = await client.get('/products');
-    dispatch(getProductItem(response.data));
+    const params = {
+      page: productFilter.page,
+      limit: productFilter.limit,
+    };
+    const response = await client.get('/products',{ params });
+    dispatch(getProductItem({products:response.data}));
   } catch (err) {
     console.log(err);
   }
