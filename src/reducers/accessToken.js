@@ -1,13 +1,10 @@
 import { SET_ACCESS_TOKEN } from "../actions";
 
-const getTokenFromLocalStorage = () => {
-    const tokenJsonString = localStorage.getItem('token'); 
-    return tokenJsonString;
-  };
 
 const initialState ={
-    token:getTokenFromLocalStorage(),
+    token:'',
 }
+
 const setTokenOnLocalStorage = (token) => {
     localStorage.setItem('token', token);
   }
@@ -19,7 +16,7 @@ export const accessToken=(state=initialState,action)=>{
             setTokenOnLocalStorage(token);
             return{
                 ...state,
-                token,
+                token:action.payload,
             }
         default:
         return state

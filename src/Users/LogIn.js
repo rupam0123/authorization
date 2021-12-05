@@ -1,5 +1,5 @@
 import {Button} from 'react-bootstrap'
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Form } from 'react-bootstrap'
 import { useSelector,useDispatch } from 'react-redux'
 import { getEmailPass } from '../actions';
@@ -10,6 +10,7 @@ export default function LogIn() {
     const dispatch=useDispatch();
     const user =useSelector((state)=>state.LogIn.logIn)
     const history =useHistory();
+
     const handleChange=(event)=>{
         dispatch(getEmailPass({...user,[event.target.name] : event.target.value}))
       }

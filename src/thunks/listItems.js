@@ -1,13 +1,14 @@
 import client from '../axios'
 import {getFamiliesItem, getLocationItem, getProductItem} from '../actions';
 
-
-const token = localStorage.getItem('token')
-console.log('i am get',token)
-   client.defaults.headers.common['Authorization'] = `Bearer ${token}`
+const getItem=()=>{
+  const temp = localStorage.getItem('token')
+  client.defaults.headers.common['Authorization'] = `Bearer ${temp}`
+} 
 
 
 export const requestProducts = (productFilter) => async (dispatch) => {
+  getItem();
   try {
     const params = {
       page: productFilter.page,
@@ -20,6 +21,7 @@ export const requestProducts = (productFilter) => async (dispatch) => {
   }
 }
 export const requestLocation = () => async (dispatch) => {
+  getItem();
   try {
     const response = await client.get('/locations');
     dispatch(getLocationItem(response.data));
@@ -29,9 +31,9 @@ export const requestLocation = () => async (dispatch) => {
 }
 
 export const requestFamilies = () => async (dispatch) => {
+  getItem();
   try {
     const response = await client.get('/families');
-    console.log('i am family',response.data)
     dispatch(getFamiliesItem(response.data));
   } catch (err) {
     console.log(err);
