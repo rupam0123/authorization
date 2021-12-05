@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import { Table } from 'react-bootstrap'
 import {useDispatch,useSelector} from 'react-redux'
+import Header from '../Header'
 import { requestLocation } from '../thunks/listItems'
 
 export default function Locations (){
@@ -14,6 +15,7 @@ export default function Locations (){
     }, [])
      return(
          <>
+         <Header/>
          <h1>Locations</h1>
          <Table>
           <thead>

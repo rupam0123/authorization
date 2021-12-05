@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import {useDispatch,useSelector} from 'react-redux'
 import { setProductPage } from '../actions';
 import { requestProducts } from '../thunks/listItems';
+import Header from '../Header';
 
 export default function Products (){
     const {products,filter} = useSelector((state)=>state.getProduct.page)
@@ -20,6 +21,7 @@ export default function Products (){
     }, [])
      return(
          <>
+         <Header/>
          <h1>Products</h1>
          <select name="limit" value={filter.limit} onChange={handleChange}>
              <option value={7}>7</option>

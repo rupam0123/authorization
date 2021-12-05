@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import { Table } from 'react-bootstrap';
 import {useDispatch,useSelector} from 'react-redux'
+import Header from '../Header';
 import { requestFamilies } from '../thunks/listItems'
 
 
@@ -14,6 +15,7 @@ export default function Products (){
     }, [])
      return(
          <>
+         <Header/>
          <h1>Families</h1>
          <Table>
           <thead>

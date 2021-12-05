@@ -1,15 +1,22 @@
 import { Button } from 'react-bootstrap'
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Form } from 'react-bootstrap'
 import { setEmailPass } from '../actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { requestNewUsers } from '../thunks/registration'
 import { useHistory } from 'react-router'
+import Header from '../Header'
 
 export default function Registration() {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.registration.data)
   const history =useHistory();
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      history.push('/login')
+    }
+  },[])
 
   const handleChange=(event)=>{
     dispatch(setEmailPass({...user,[event.target.name] : event.target.value}))
@@ -32,6 +39,7 @@ export default function Registration() {
 
   return (
     <>
+    <Header/>
       <h1>Registration Form</h1>
       <Form onSubmit={handlesubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
