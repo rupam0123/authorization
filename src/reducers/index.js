@@ -5,6 +5,7 @@ import { LogIn } from './logIn';
 import { getProduct } from './product';
 import { getLocation } from './location';
 import { getFamily } from './families';
+import { getTranstaction } from './transaction';
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
 		LogIn,
 		getProduct,
 		getLocation,
-		getFamily
+		getFamily,
+		getTranstaction
 });

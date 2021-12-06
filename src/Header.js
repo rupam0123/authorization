@@ -12,7 +12,7 @@ export default function Header(){
             <Nav.Link href="/product">Products</Nav.Link>
             <Nav.Link href="/locations">Locations</Nav.Link>
             <Nav.Link href="/families">Families</Nav.Link>
-            <Nav.Link href="/product">Transactions</Nav.Link>
+            <Nav.Link href="/transactions">Transactions</Nav.Link>
             <Nav.Link href="/logout">Logout</Nav.Link>
             </>:
             <>

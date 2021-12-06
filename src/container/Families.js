@@ -22,7 +22,6 @@ export default function Products (){
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Cost</th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +29,6 @@ export default function Products (){
          <tr>
              <td>{item.id}</td>
              <td>{item.name}</td>
-             <td>{item.cost}</td>
         </tr>   
          )}
             </tbody>

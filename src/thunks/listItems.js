@@ -1,5 +1,5 @@
 import client from '../axios'
-import {getFamiliesItem, getLocationItem, getProductItem} from '../actions';
+import {getFamiliesItem, getLocationItem, getProductItem, getTransactionItem} from '../actions';
 
 const getItem=()=>{
   const temp = localStorage.getItem('token')
@@ -35,6 +35,16 @@ export const requestFamilies = () => async (dispatch) => {
   try {
     const response = await client.get('/families');
     dispatch(getFamiliesItem(response.data));
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export const requestTransaction = () => async (dispatch) => {
+  getItem();
+  try {
+    const response = await client.get('/transactions');
+    dispatch(getTransactionItem(response.data));
   } catch (err) {
     console.log(err);
   }
