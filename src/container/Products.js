@@ -18,16 +18,18 @@ export default function Products (){
     useEffect(() => {
         dispatch(requestProducts(filter))
         
-    }, [])
+    }, [filter])
      return(
          <>
          <Header/>
          <h1>Products</h1>
          <select name="limit" value={filter.limit} onChange={handleChange}>
-             <option value={7}>7</option>
-             <option value={8}>8</option>
-             <option value={9}>9</option>
+             <option value={1}>1</option>
+             <option value={2}>2</option>
+             <option value={3}>3</option>
+             <option value={5}>5</option>
              <option value={10}>10</option>
+             <option value={10}>20</option>
          </select>
          <Table>
           <thead>

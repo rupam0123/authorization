@@ -3,7 +3,7 @@ import { GET_PRODUCT_ITEM ,SET_PRODUCT_PAGE} from "../actions";
 const initialState = {
     page:{
     products:[],
-    filter:{page:7,limit:10}
+    filter:{page:1,limit:1}
     }
 }
 

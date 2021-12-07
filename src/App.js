@@ -5,7 +5,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom'
 import LogIn from './Users/LogIn';
 import Products from './container/Products';
 import Locations from './container/Locations';
-import Families from './container/Families'
+import Families from './container/Families';
 import Logout from './Users/Logout';
 import Protected from './Protected';
 import Transactions from './container/Transactions';

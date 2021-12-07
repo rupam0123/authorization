@@ -1,21 +1,31 @@
 import React,{useEffect} from 'react'
 import { Table } from 'react-bootstrap'
 import {useDispatch,useSelector} from 'react-redux'
+import { setLocationPage } from '../actions'
 import Header from '../Header'
 import { requestLocation } from '../thunks/listItems'
 
 export default function Locations (){
-    const location = useSelector((state)=>state.getLocation.location)
+    const {location,filter} = useSelector((state)=>state.getLocation.page)
     const dispatch=useDispatch();
+    const handleChange=(event)=>{
+      const { value, name } = event.target;
+      dispatch(setLocationPage({ [name]: value }));
+    };
 
     useEffect(() => {
-        dispatch(requestLocation())
+        dispatch(requestLocation(filter))
         
-    }, [])
+    }, [filter])
      return(
          <>
          <Header/>
          <h1>Locations</h1>
+         <select name="limit" value={filter.limit} onChange={handleChange}>
+             <option value={1}>1</option>
+             <option value={2}>2</option>
+             <option value={3}>3</option>
+         </select>
          <Table>
           <thead>
             <tr>

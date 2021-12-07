@@ -6,6 +6,7 @@ export const GET_LOCATIONS_ITEM = 'GET_LOCATIONS_ITEM'
 export const GET_FAMILIES_ITEM = 'GET_FAMILIES_ITEM'
 export const GET_TRANSACTIONS_ITEM = 'GET_TRANSACTIONS_ITEM'
 export const SET_PRODUCT_PAGE = 'SET_PRODUCT_PAGE'
+export const SET_LOCATION_PAGE = 'SET_LOCATION_PAGE' 
 
 
 
@@ -17,3 +18,4 @@ export const getLocationItem =(payload)=>({type:GET_LOCATIONS_ITEM,payload})
 export const getFamiliesItem =(payload)=>({type:GET_FAMILIES_ITEM,payload})
 export const getTransactionItem =(payload)=>({type:GET_TRANSACTIONS_ITEM,payload})
 export const setProductPage =(payload) =>({type:SET_PRODUCT_PAGE,payload})
+export const setLocationPage =(payload) =>({type:SET_LOCATION_PAGE,payload})
