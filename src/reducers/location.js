@@ -1,9 +1,9 @@
-import { GET_LOCATIONS_ITEM ,SET_LOCATION_PAGE} from "../actions";
+import { GET_LOCATIONS_ITEM ,SET_LOCATION_LIMIT} from "../actions";
 
 const initialState = {
     page:{
     location:[],
-    filter:{page:1,limit:10}
+    filter:{page:1,limit:3}
     }
 }
 
@@ -18,7 +18,7 @@ export const getLocation=(state=initialState,action)=>{
                 }
             }
 
-        case SET_LOCATION_PAGE :
+        case SET_LOCATION_LIMIT :
             return{
                 ...state,
                 page:{

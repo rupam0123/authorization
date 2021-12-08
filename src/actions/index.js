@@ -5,8 +5,8 @@ export const GET_PRODUCT_ITEM = 'GET_PRODUCT_ITEM'
 export const GET_LOCATIONS_ITEM = 'GET_LOCATIONS_ITEM'
 export const GET_FAMILIES_ITEM = 'GET_FAMILIES_ITEM'
 export const GET_TRANSACTIONS_ITEM = 'GET_TRANSACTIONS_ITEM'
-export const SET_PRODUCT_PAGE = 'SET_PRODUCT_PAGE'
-export const SET_LOCATION_PAGE = 'SET_LOCATION_PAGE' 
+export const SET_PRODUCT_LIMIT = 'SET_PRODUCT_LIMIT'
+export const SET_LOCATION_LIMIT = 'SET_LOCATION_LIMIT' 
 
 
 
@@ -17,5 +17,5 @@ export const getProductItem =(payload)=>({type:GET_PRODUCT_ITEM,payload})
 export const getLocationItem =(payload)=>({type:GET_LOCATIONS_ITEM,payload})
 export const getFamiliesItem =(payload)=>({type:GET_FAMILIES_ITEM,payload})
 export const getTransactionItem =(payload)=>({type:GET_TRANSACTIONS_ITEM,payload})
-export const setProductPage =(payload) =>({type:SET_PRODUCT_PAGE,payload})
-export const setLocationPage =(payload) =>({type:SET_LOCATION_PAGE,payload})
+export const setProductLimit =(payload) =>({type:SET_PRODUCT_LIMIT,payload})
+export const setLocationLimit =(payload) =>({type:SET_LOCATION_LIMIT,payload})

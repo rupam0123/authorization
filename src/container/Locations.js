@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { Table } from 'react-bootstrap'
 import {useDispatch,useSelector} from 'react-redux'
-import { setLocationPage } from '../actions'
+import { setLocationLimit} from '../actions'
 import Header from '../Header'
 import { requestLocation } from '../thunks/listItems'
 
@@ -10,7 +10,7 @@ export default function Locations (){
     const dispatch=useDispatch();
     const handleChange=(event)=>{
       const { value, name } = event.target;
-      dispatch(setLocationPage({ [name]: value }));
+      dispatch(setLocationLimit({ [name]: value }));
     };
 
     useEffect(() => {
